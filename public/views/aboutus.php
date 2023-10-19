@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Michal Pozdal">
-    <link rel="stylesheet" href="/public/css/styleMain.css">
-    <link rel="stylesheet" href="/public/css/styleLogin.css">
+    <link rel="stylesheet" href="/public/css/styleMain.css?v=2">
+    <link rel="stylesheet" href="/public/css/styleLogin.css?v=2">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <a href="index.php"> <img src="/public/assets/logo.png" class="logo" /></a>
+        <a href="home"> <img src="/public/assets/logo.png" class="logo" /></a>
         <div class="bars">
             <i class="fa-solid fa-bars"></i>
         </div>
@@ -23,16 +23,10 @@
             <a href="home"><span class="menu">Home</span></a>
             <a href="home#products"><span class="menu">Menu</span></a>
             <a href="aboutus"><span class="menu">About us</span></a>
-            <?php
-            session_start();
-            if (isset($_SESSION["email"])) {
-                echo '<a href="account"><span class="menu">Account</span></a>';
-            } else {
-                echo '<a href="login"><span class="menu">Account</span></a>';
-            }
-            ?>
-            <a href="cart"><span class="menu"><i class="fa-solid fa-cart-shopping"></i></span></a>
+            <a href="login"><span class="menu">Account</span></a>
+
         </div>
+        <a href="cart"><span class="menu"><i class="fa-solid fa-cart-shopping"></i></span></a>
 
     </header>
     <main>

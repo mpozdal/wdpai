@@ -1,60 +1,46 @@
+function totalPrice(cart) {
+	let suma = 0.0;
+	cart.forEach((item) => {
+		let price = parseFloat(
+			item['itemPrice'].replace(' zł', '').replace(',', '.')
+		);
+
+		suma += price;
+	});
+	return suma.toFixed(2);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 	let view = document.querySelector('article');
 	let cart = JSON.parse(sessionStorage.getItem('cart'));
+	let suma = totalPrice(cart);
 
-	let zliczoneElementy = {};
-	let ceny = {};
+	let summary = document.querySelector('.totalPrice');
+	summary.innerHTML = suma + 'zł';
 
-	cart.forEach(function (obiekt) {
-		let name = obiekt.name;
-		let klucz = name;
-		let klucz2 = obiekt.price;
-
-		if (zliczoneElementy[klucz]) {
-			zliczoneElementy[klucz]++;
-		} else {
-			zliczoneElementy[klucz] = 1;
-		}
-		if (ceny[klucz]) {
-			ceny[klucz] = klucz2;
-		} else {
-			ceny[klucz] = klucz2;
-		}
-	});
-	console.log(ceny);
-
-	for (let i = 0; i < Object.keys(zliczoneElementy).length; i++) {
+	for (let i = 0; i < cart.length; i++) {
 		const cartItem = document.createElement('span');
 		cartItem.classList.add('cartItem');
-		cartItem.id = Object.keys(zliczoneElementy)[i].replace(' ', '');
+		cartItem.id = cart[i].itemName.replace(' ', '');
 
 		const img = document.createElement('img');
-		img.src = '/public/assets/kawa1.png';
-		img.width = '40';
+		img.src = cart[i].imgSrc;
+		img.width = '60';
 		cartItem.appendChild(img);
-
-		const qty = document.createElement('span');
-
-		qty.classList.add('name');
-		qty.id = Object.keys(zliczoneElementy)[i].replace(' ', '');
-
-		qty.textContent = Object.values(zliczoneElementy)[i];
-
-		cartItem.appendChild(qty);
 
 		const name = document.createElement('span');
 		name.classList.add('name');
-		name.textContent = Object.keys(zliczoneElementy)[i];
+		name.textContent = cart[i].itemName;
 		cartItem.appendChild(name);
 
 		const price = document.createElement('span');
 		price.classList.add('price');
-		price.textContent = ceny[Object.keys(zliczoneElementy)[i]] + ' zł';
+		price.textContent = cart[i].itemPrice;
 		cartItem.appendChild(price);
 
 		const removeIcon = document.createElement('i');
 		removeIcon.classList.add('fa-solid', 'fa-xmark');
-		removeIcon.id = Object.keys(zliczoneElementy)[i].replace(' ', '');
+		removeIcon.id = cart[i].itemName.replace(' ', '');
 		cartItem.appendChild(removeIcon);
 
 		view.appendChild(cartItem);
@@ -65,12 +51,15 @@ document.addEventListener('DOMContentLoaded', function () {
 	items.forEach((item) => {
 		item.addEventListener('click', function () {
 			console.log(cart);
+
 			cart = cart.filter(function (obiekt) {
 				console.log(obiekt);
-				return obiekt.name.replace(' ', '') !== item.id;
+				return obiekt.itemName.replace(' ', '') !== item.id;
 			});
 			console.log(cart);
 			sessionStorage.setItem('cart', JSON.stringify(cart));
+			suma = totalPrice(cart);
+			summary.innerHTML = suma + 'zł';
 			let itemToDelete = document.querySelector('#' + item.id);
 			itemToDelete.parentNode.removeChild(itemToDelete);
 		});

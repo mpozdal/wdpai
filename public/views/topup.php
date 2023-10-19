@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <a href="index.php"> <img src="/public/assets/logo.png" class="logo" /></a>
+        <a href="home"> <img src="/public/assets/logo.png" class="logo" /></a>
         <div class="bars">
             <i class="fa-solid fa-bars"></i>
         </div>
@@ -23,9 +23,10 @@
             <a href="home"><span class="menu">Home</span></a>
             <a href="home#products"><span class="menu">Menu</span></a>
             <a href="aboutus"><span class="menu">About us</span></a>
-            <a href=""><span class="menu">Account</span></a>
-            <a href="cart"><span class="menu"><i class="fa-solid fa-cart-shopping"></i></span></a>
+            <a href="login"><span class="menu">Account</span></a>
+
         </div>
+        <a href="cart"><span class="menu"><i class="fa-solid fa-cart-shopping"></i></span></a>
 
     </header>
     <main>

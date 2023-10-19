@@ -1,77 +1,65 @@
-const coffees = [
+const products = [
 	{
-		name: 'Coffee 1',
-		desc: '',
-		price: '10,00',
-		img: '/public/assets/kawa1.png',
-		id: 'Coffe1',
+		imgSrc: './public/assets/c2.png',
+		itemName: 'CAPPUCCINO',
+		itemDesc: 'Lorem ipsum dolor sit amet, consectetur',
+		strength: 2,
+		itemPrice: '12.99 zł',
 	},
 	{
-		name: 'Coffee 2',
-		desc: '',
-		price: '15,00',
-		img: '/public/assets/kawa1.png',
-		id: 'Coffee2',
+		imgSrc: './public/assets/c3.png',
+		itemName: 'ESSPRESSO',
+		itemDesc: 'Lorem ipsum dolor sit amet, consectetur',
+		strength: 5,
+		itemPrice: '6.99 zł',
 	},
 	{
-		name: 'Coffee 3',
-		desc: '',
-		price: '11,00',
-		img: '/public/assets/kawa1.png',
-		id: 'Coffee3',
+		imgSrc: './public/assets/c1.png',
+		itemName: 'CAFFE LATTE',
+		itemDesc: 'Lorem ipsum dolor sit amet, consectetur',
+		strength: 3,
+		itemPrice: '9.99 zł',
 	},
 	{
-		name: 'Coffee 4',
-		desc: '',
-		price: '11,00',
-		img: '/public/assets/kawa1.png',
-		id: 'Coffee3',
-	},
-	{
-		name: 'Coffee 5',
-		desc: '',
-		price: '11,00',
-		img: '/public/assets/kawa1.png',
-		id: 'Coffee3',
+		imgSrc: './public/assets/c3.png',
+		itemName: 'CORTADO',
+		itemDesc: 'Lorem ipsum dolor sit amet, consectetur',
+		strength: 4,
+		itemPrice: '7.99 zł',
 	},
 ];
-document.addEventListener('scroll', function () {
-	let body = document.querySelector('#home');
-	body.scrollLeft += 200;
-});
+
 document.addEventListener('DOMContentLoaded', function () {
 	let mainProducts = document.querySelector('#mainProducts');
 
-	for (let i = 0; i < coffees.length; i++) {
-		let divElement = document.createElement('div');
-		divElement.classList.add('item');
-		divElement.id = coffees[i].id;
-		let imgElement = document.createElement('img');
-		imgElement.classList.add('imgItem');
-		imgElement.src = coffees[i].img;
+	products.forEach((product) => {
+		const productElement = document.createElement('div');
+		productElement.classList.add('product');
 
-		let spanElement = document.createElement('span');
+		productElement.innerHTML = `
+		  <div class="imgContainer">
+			<img src="${product.imgSrc}" class="itemImg" alt="${product.itemName}" />
+		  </div>
+		  <div class="desc">
+			<span class="itemName">${product.itemName}</span>
+			<span class="itemDesc">${product.itemDesc}</span>
+		  </div>
+		  <div class="details">
+			<div class="strength">
+			  ${'<i class="fa-solid fa-circle"></i> '.repeat(product.strength)}
+			  ${'<i class="fa-regular fa-circle"></i> '.repeat(5 - product.strength)}
+			</div>
+			<div class="itemPrice">
+			  ${product.itemPrice}
+			</div>
+		  </div>
+		`;
 
-		let priceParagraf = document.createElement('p');
-		priceParagraf.classList.add('price');
-
-		priceParagraf.textContent = coffees[i].price + ' zł';
-
-		let textParagraf = document.createElement('p');
-		textParagraf.classList.add('desc');
-		textParagraf.textContent = coffees[i].name;
-
-		spanElement.appendChild(priceParagraf);
-		spanElement.appendChild(textParagraf);
-
-		divElement.appendChild(imgElement);
-		divElement.appendChild(spanElement);
-
-		mainProducts.appendChild(divElement);
-	}
+		mainProducts.appendChild(productElement);
+	});
 	let cart,
 		oldCart = [];
-	const items = document.querySelectorAll('.item');
+	const items = document.querySelectorAll('.product');
 	if (sessionStorage.length > 0) {
 		oldCart = JSON.parse(sessionStorage.getItem('cart'));
 		cart = new Cart(oldCart);
@@ -81,9 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 	items.forEach((item, i) => {
 		item.addEventListener('click', function () {
-			console.log(`Kliknięto produkt o ID: ${item.id}`);
-			cart.addItem(coffees[i]);
-			console.log('abcd');
+			cart.addItem(products[i]);
+			console.log('click');
 		});
 	});
 });

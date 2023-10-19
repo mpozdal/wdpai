@@ -8,18 +8,22 @@
 
     <meta charset="UTF-8">
     <meta name="author" content="Michal Pozdal">
-    <link rel="stylesheet" href="/public/css/styleMain.css?v=3">
-    <link rel="stylesheet" href="/public/css/styleHome.css">
+    <link rel="stylesheet" href="/public/css/styleMain.css?v=4">
+    <link rel="stylesheet" href="/public/css/styleHome.css?v=6">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
-    <script src="/public/scripts/script.js?v=2"></script>
+    <script src="/public/scripts/script.js"></script>
     <script src="https://kit.fontawesome.com/5093dc09b3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
     <div id="home">
+
+        <a href="#home"><i class="fa-regular fa-circle-up"></i></a>
+
         <header>
             <a href="home"> <img src="/public/assets/logo.png" class="logo" /></a>
             <div class="bars">
@@ -29,7 +33,7 @@
                 <a href="home"><span class="menu">Home</span></a>
                 <a href="home#products"><span class="menu">Menu</span></a>
                 <a href="aboutus"><span class="menu">About us</span></a>
-                <a href="login"><span class="menu">Account</span></a>;
+                <a href="login"><span class="menu">Account</span></a>
 
             </div>
             <a href="cart"><span class="menu"><i class="fa-solid fa-cart-shopping"></i></span></a>
@@ -66,20 +70,9 @@
 
         </section>
         <section id="mainProducts">
-
-
         </section>
     </article>
     <footer>
-        <span id="newsletter">
-            <h5>Subscribe to our newsletter!</h5>
-            <span>
-                <input type="text" id="email" name="email" placeholder="Email">
-                <span class="btn">
-                    OK
-                </span>
-            </span>
-        </span>
 
 
         <span id="social">

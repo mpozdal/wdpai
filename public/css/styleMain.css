@@ -42,7 +42,7 @@ a {
     color: #FFE7D1;
 }
 footer {
-    height: 150px;
+    height: 100px;
     background-color: #765F4E;
     display:flex;
     flex-direction: row;

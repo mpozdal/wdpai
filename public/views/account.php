@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Michal Pozdal">
-    <link rel="stylesheet" href="/public/css/styleMain.css">
-    <link rel="stylesheet" href="/public/css/styleAcc.css">
+    <link rel="stylesheet" href="/public/css/styleMain.css?v=2">
+    <link rel="stylesheet" href="/public/css/styleAcc.css?v=4">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -14,8 +14,9 @@
 </head>
 
 <body>
+
     <header>
-        <a href="index.php"> <img src="/public/assets/logo.png" class="logo" /></a>
+        <a href="home"> <img src="/public/assets/logo.png" class="logo" /></a>
         <div class="bars">
             <i class="fa-solid fa-bars"></i>
         </div>
@@ -23,24 +24,20 @@
             <a href="home"><span class="menu">Home</span></a>
             <a href="home#products"><span class="menu">Menu</span></a>
             <a href="aboutus"><span class="menu">About us</span></a>
-
             <a href="login"><span class="menu">Account</span></a>
 
-
-
-
-            <a href="cart"><span class="menu"><i class="fa-solid fa-cart-shopping"></i></span></a>
         </div>
+        <a href="cart"><span class="menu"><i class="fa-solid fa-cart-shopping"></i></span></a>
 
     </header>
     <main>
 
-        <div class="grid">
+        <div class="list">
             <div class="info">
                 <?php
                 session_start();
                 echo " <div>Hi, " . $_SESSION["name"] . "</div>";
-                echo "<div>Your balance: " . $_SESSION["balance"] . " zł</div>";
+                echo "<div class='balance'>Your balance: " . $_SESSION["balance"] . " zł</div>";
 
                 ?>
             </div>
@@ -49,7 +46,7 @@
 
             <form method="POST" action="orders">
                 <button type="submit" value="orders" name="orders" class="button">
-                    <i class="fa-solid fa-mug-saucer" style="font-size: 50px;"></i>
+                    <i class="fa-solid fa-mug-saucer" style="font-size: 30px;"></i>
                     &nbsp;&nbsp;&nbsp;Orders
                 </button>
             </form>
@@ -58,7 +55,7 @@
 
             <form method="POST" action="topup">
                 <button type="submit" value="topup" name="topup" class="button">
-                    <i class="fa-solid fa-money-bill" style="font-size: 50px;"></i>
+                    <i class="fa-solid fa-money-bill" style="font-size: 30px;"></i>
                     &nbsp;&nbsp;&nbsp;Top up
                 </button>
             </form>
@@ -68,7 +65,7 @@
             <form method="POST" action="logout">
 
                 <button type="submit" value="Logout" name="logout" class="button">
-                    <i class="fa-solid fa-right-from-bracket" style="font-size: 50px;"></i>
+                    <i class="fa-solid fa-right-from-bracket" style="font-size: 30px;"></i>
                     &nbsp;&nbsp;&nbsp;Logout
                 </button>
             </form>

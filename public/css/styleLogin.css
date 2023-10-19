@@ -32,6 +32,10 @@ main input {
     padding-left: 50px;
 
 }
+.menu {
+    padding: 10px;
+    color: #765F4E;
+}
 .noAcc {
     font-size: 13px;
     justify-content: flex-end;
