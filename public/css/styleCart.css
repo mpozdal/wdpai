@@ -1,0 +1,72 @@
+main {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.textHeader {
+    font-size: 50px;
+    font-weight: bold;
+    color: #765F4E;
+    
+    
+}
+.cartItem {
+    display: flex;
+    font-weight: bold;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    height: 150px;
+    border-bottom: 2px solid #919191;
+    color: #765F4E;
+    font-size: 30px;
+    
+}
+.manage {
+    color: orangered;
+}
+.manage:hover {
+    cursor: pointer;
+    opacity: .0;
+}
+.name {
+    
+    color: #000;
+}
+.price {
+    color: #919191;
+    font-size: 20px;
+}
+.fa-xmark {
+    color: orangered;
+  
+}
+.fa-xmark:hover {
+    cursor: pointer;
+    opacity: .5;
+    transition: .2s ease-in;
+}
+main button {
+    width: 320px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #915B2F;
+    border: 2px solid #915B2F;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+    
+}
+
+
+button:hover {
+    opacity: .9;
+    cursor: pointer;
+}

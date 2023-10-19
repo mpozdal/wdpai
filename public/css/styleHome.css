@@ -1,0 +1,163 @@
+
+main {
+    height: 90vh;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+#home {
+    background: url("../assets/background.jpg");
+    
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.text {
+    height: 70vh;
+    
+    font-weight:bolder;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.mainText {
+    font-family: "Courgette";
+    font-size: 3em;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 7px rgba(0,0,0, .2);
+    font-weight: bold;
+}
+.img {
+    width: 800px;
+    display: none;
+}
+.order {
+    background-color: rgba(0,0,0,.6);
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 20px;
+    color: white;
+    width: 200px;
+    text-align: center;
+}
+.order:hover {
+    background-color: rgba(0,0,0,.3);
+    transition: .2s ease-in;
+    
+    cursor: pointer;
+    
+}
+
+
+strong {
+    color:#915B2F;
+}
+article#products{
+    width: 90%;
+    margin: auto;
+}
+section#headerProducts {
+    height: 150px;
+    
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+article section span:first-child {
+    font-size: 40px;
+    font-weight: bold;
+    color:#765F4E;
+}
+#products {
+    height: 100vh;
+}
+section#mainProducts {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 150px);
+    gap: 15px;
+    margin-bottom: 50px;
+   
+}
+
+.item {
+    height: 150px;
+    background-color: #765F4E;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color:white;
+    
+    
+}
+.item:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transition: .2s ease-in;
+}
+.item span{
+    height: 120px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.item span .price {
+    font-size: 25px;
+    font-weight: bold;
+}
+.imgItem {
+    width: 50px;
+}
+.desc {
+    font-size: 20px;
+}
+.imgSection {
+    background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-size: cover;
+  	background-position: 100% auto;
+		position:relative;
+}
+
+
+@media only screen and (max-width: 1600px) {
+   .img {
+    width: 600px;
+   }
+ 
+  }
+  @media only screen and (max-width: 1000px) {
+    body {
+        background-image: url("../assets/main.png");
+        background-size: contain;
+    }
+    .imgSection {
+     display: none;
+    }
+    main {
+        justify-content: center;
+    }
+    .text {
+        justify-content: center;
+        text-align: center;
+    }
+    footer {
+        display: none;
+    }
+    #nav {
+        display: none;
+    }
+    .bars {
+        display: block;
+    }
+   }

@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+html {
+    scroll-behavior: smooth;
+    
+  }
+.bars {
+    display: none;
+}
+header {
+    height: 10vh;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.logo {
+    width: 100px;
+}
+a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.menu {
+    padding: 10px;
+    color: #fff;
+}
+
+
+.menu:hover {
+    transition: .2s ease-in;
+    color: #FFE7D1;
+}
+footer {
+    height: 150px;
+    background-color: #765F4E;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+footer input {
+    width: 250px;
+    padding: 15px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+#newsletter {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    
+}
+#newsletter span {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.btn{
+    position: relative;
+    left: -55px;
+    background-color: white;
+    border: 2px solid white;
+    padding: 10px;
+    color:#915B2F;
+    border-radius: 20px;
+}
+.btn:hover{
+    cursor: pointer;
+    transition: .2s ease-in;
+    color: #FFE7D1;
+    
+}
+#social {
+    font-size: 40px;
+    display: flex;
+    gap: 60px;
+}
+.fa-brands {
+   color: white;
+}
+.fa-brands:hover{
+    cursor: pointer;
+    transition: .2s ease-in;
+    color: #FFE7D1;
+}
+
+
+
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+
+
+
+@media only screen and (max-width: 1600px) {
+   .img {
+    width: 600px;
+   }
+  }
+  @media only screen and (max-width: 1000px) {
+  
+    footer {
+        display: none;
+    }
+    #nav {
+        display: none;
+    }
+    .bars {
+        display: block;
+    }
+   }
