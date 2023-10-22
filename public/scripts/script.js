@@ -1,96 +1,34 @@
-const products = [
-	{
-		imgSrc: './public/assets/c2.png',
-		itemName: 'CAPPUCCINO',
-		itemDesc: 'Lorem ipsum dolor sit amet, consectetur',
-		strength: 2,
-		itemPrice: '12.99 zł',
-	},
-	{
-		imgSrc: './public/assets/c3.png',
-		itemName: 'ESSPRESSO',
-		itemDesc: 'Lorem ipsum dolor sit amet, consectetur',
-		strength: 5,
-		itemPrice: '6.99 zł',
-	},
-	{
-		imgSrc: './public/assets/c1.png',
-		itemName: 'CAFFE LATTE',
-		itemDesc: 'Lorem ipsum dolor sit amet, consectetur',
-		strength: 3,
-		itemPrice: '9.99 zł',
-	},
-	{
-		imgSrc: './public/assets/c3.png',
-		itemName: 'CORTADO',
-		itemDesc: 'Lorem ipsum dolor sit amet, consectetur',
-		strength: 4,
-		itemPrice: '7.99 zł',
-	},
-];
-
+let coffeeCount = {
+	CAPPUCCINO: 0,
+	ESSPRESSO: 0,
+	'CAFFE LATTE': 0,
+	CORTADO: 0,
+};
 document.addEventListener('DOMContentLoaded', function () {
-	let mainProducts = document.querySelector('#mainProducts');
+	let modal = document.querySelector('#modal');
+	coffeeCount = JSON.parse(sessionStorage.getItem('coffeeCount'));
 
-	products.forEach((product) => {
-		const productElement = document.createElement('div');
-		productElement.classList.add('product');
+	let goUp = document.querySelector('.goUp');
 
-		productElement.innerHTML = `
-		  <div class="imgContainer">
-			<img src="${product.imgSrc}" class="itemImg" alt="${product.itemName}" />
-		  </div>
-		  <div class="desc">
-			<span class="itemName">${product.itemName}</span>
-			<span class="itemDesc">${product.itemDesc}</span>
-		  </div>
-		  <div class="details">
-			<div class="strength">
-			  ${'<i class="fa-solid fa-circle"></i> '.repeat(product.strength)}
-			  ${'<i class="fa-regular fa-circle"></i> '.repeat(5 - product.strength)}
-			</div>
-			<div class="itemPrice">
-			  ${product.itemPrice}
-			</div>
-		  </div>
-		`;
-
-		mainProducts.appendChild(productElement);
+	window.addEventListener('scroll', function () {
+		if (window.scrollTop !== 0) {
+			goUp.style.display = 'block';
+		}
+		if (window.pageYOffset === 0 || window.scrollTop === 0) {
+			goUp.style.display = 'none';
+		}
 	});
-	let cart,
-		oldCart = [];
 	const items = document.querySelectorAll('.product');
-	if (sessionStorage.length > 0) {
-		oldCart = JSON.parse(sessionStorage.getItem('cart'));
-		cart = new Cart(oldCart);
-		cart.getCart();
-	} else {
-		cart = new Cart();
-	}
 	items.forEach((item, i) => {
 		item.addEventListener('click', function () {
-			cart.addItem(products[i]);
-			console.log('click');
+			let nested = item.querySelector('.itemName');
+			let added = nested.innerText;
+			coffeeCount[added] += 1;
+			modal.style.display = 'block';
+			sessionStorage.setItem('coffeeCount', JSON.stringify(coffeeCount));
+			setTimeout(() => {
+				modal.style.display = 'none';
+			}, 500);
 		});
 	});
 });
-
-class Cart {
-	constructor(items = []) {
-		this.items = [...items];
-	}
-
-	getCart() {
-		return this.items;
-	}
-
-	addItem(item) {
-		this.items.push(item);
-		sessionStorage.setItem('cart', JSON.stringify(this.items));
-	}
-	deleteItem(index) {
-		if (index >= 0 && index < this.produkty.length) {
-			this.produkty.splice(index, 1);
-		}
-	}
-}

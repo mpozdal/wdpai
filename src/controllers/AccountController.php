@@ -10,13 +10,7 @@ class AccountController extends AppController
     {
         echo "orders";
     }
-    public function topup()
-    {
-        if (isset($_SESSION["email"])) {
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/topup");
-        }
-    }
+
     public function logout()
     {
         session_start();

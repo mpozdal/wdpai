@@ -1,12 +1,11 @@
 main {
-    min-height: 90vh;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
-    
-
+    min-height: 90vh;
 }
 
+.cartImg {
+    width: 100%;
+}
 .summaryDiv {
     width: 20%;
     display: flex;
@@ -40,8 +39,6 @@ main {
     display: flex;
     width: 100%;
     justify-content: space-around;
-    
-    
 }
 .total, .totalPrice {
     font-size: 20px;
@@ -67,6 +64,9 @@ article {
     align-items: center;
     justify-content: center;
 }
+article:last-child {
+    border: none;
+}
 .cartItem {
     display: flex;
     font-weight: bold;
@@ -79,12 +79,13 @@ article {
     font-size: 30px;
     
 }
-.manage {
-    color: orangered;
+.edit {
+    color: #765F4E;
+    font-size: 25px;
 }
-.manage:hover {
+.edit:hover {
     cursor: pointer;
-    opacity: .0;
+    opacity: .3;
 }
 .name {
     
@@ -107,8 +108,8 @@ main button {
     width: 80%;
     padding: 15px;
     border-radius: 20px;
-    background-color: #915B2F;
-    border: 2px solid #915B2F;
+    background-color: #765F4E;
+    border: 2px solid #765F4E;
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 20px;
@@ -122,4 +123,94 @@ button:hover {
     opacity: .9;
     cursor: pointer;
 }
+.mobileCheckout {
+    
+    position: fixed;
+    bottom: 0;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    color: #765F4E;
+    background: white;
+    display: none;
+    
+}
+.summaryMobile {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 30px;
+    color:#765F4E;
+    display: none;
+}
+.mobileCheckout {
+    display: none;
+}
+.mobileButton {
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
 
+    display: none;
+}
+.checkoutButton2 {
+
+}
+@media only screen and (max-width: 1000px) {
+    main {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+    .mobileButton {
+        display: flex;
+    }
+    .summaryMobile {
+        display: flex;
+    }
+    .mobileCheckout {
+        display: block;
+    }
+    main button {
+        width: 60%;
+        padding: 15px;
+        border-radius: 20px;
+        background-color: #765F4E;
+        border: 2px solid #765F4E;
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+    }
+    .summaryDiv {
+        display: none;
+    }
+    .mobileCheckout {
+        display: block;
+    }
+    .cartItem {
+        width: 100%;
+        font-size: 20px;
+    }
+    article {
+        width: 100%;
+    }
+    
+    .mainCart {
+        width: 90%;
+        height: 80vh;
+        
+        overflow-y: scroll;
+        
+    }
+
+}

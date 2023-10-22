@@ -1,41 +1,31 @@
-main {
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+
 .textHeader {
     font-size: 50px;
     font-weight: bold;
-    color: #915B2F;
+    color: #765F4E;
 }
 form {
     margin-top: 60px;
     margin-bottom: 60px;
     display: flex;
     flex-direction: column;
-   
+   gap: 10px;
 
 }
 
 main input {
-    margin-bottom: 10px;
+
     width: 250px;
     padding: 15px;
     background-color: transparent;
-    border: 2px solid #915B2F;
+    border: 2px solid #765F4E;
     border-radius: 20px;
-    color: #915B2F;
-    
+    color: #765F4E;
     font-size: 15px;
     padding-left: 50px;
 
 }
-.menu {
-    padding: 10px;
-    color: #765F4E;
-}
+
 .noAcc {
     font-size: 13px;
     justify-content: flex-end;
@@ -45,8 +35,8 @@ main button {
     width: 320px;
     padding: 15px;
     border-radius: 20px;
-    background-color: #915B2F;
-    border: 2px solid #915B2F;
+    background-color: #765F4E;
+    border: 2px solid #765F4E;
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 20px;
@@ -63,9 +53,15 @@ form span {
     align-items: center;
 }
 .fa-envelope, .fa-key, .fa-user{
-    color:#915B2F;
+    color:#765F4E;
     position: relative;
     right: -40px;
     font-size: 20px;
    
+}
+
+@media only screen and (max-width: 1000px) {
+    .bars {
+        color:#765F4E;
+    }
 }

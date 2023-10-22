@@ -2,12 +2,12 @@
 
 require_once "AppController.php";
 
+require_once __DIR__ . '/../models/Coffee.php';
+require_once __DIR__ . "/../repository/CoffeeRepository.php";
+
 class DefaultController extends AppController
 {
-    public function home()
-    {
-        $this->render('home');
-    }
+   
 
     public function account()
     {

@@ -4,6 +4,7 @@ require_once 'src/controllers/DefaultController.php';
 require_once 'src/controllers/SecurityController.php';
 require_once 'src/controllers/Ordercontroller.php';
 require_once 'src/controllers/AccountController.php';
+require_once 'src/controllers/ProductsController.php';
 
 class Router
 {
