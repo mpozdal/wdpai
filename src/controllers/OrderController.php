@@ -5,6 +5,12 @@ require_once __DIR__ . "/../repository/UserRepository.php";
 require_once __DIR__ . "/../repository/OrderRepository.php";
 class OrderController extends AppController
 {
+    private $orderRepository;
+
+    public function __construct()
+    {
+        $this->orderRepository = new OrderRepository();
+    }
 
     public function cart()
     {
@@ -23,9 +29,19 @@ class OrderController extends AppController
         $balance = $balance - 5;
         echo $balance;
 
-
+        return $this->render('cart');
 
     }
-
+    public function orders()
+    {
+        session_start();
+        if (!isset($_SESSION["email"])) {
+            return $this->render("login");
+        }
+        $orders = $this->orderRepository->getOrders($_SESSION["email"]);
+        return $this->render('orders', ["orders" => $orders]);
+    }
 
 }
+
+

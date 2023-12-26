@@ -6,10 +6,6 @@ require_once "AppController.php";
 class AccountController extends AppController
 {
 
-    public function orders()
-    {
-        echo "orders";
-    }
 
     public function logout()
     {

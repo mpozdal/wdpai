@@ -1,0 +1,26 @@
+main {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position:static;
+    gap: 30px;
+}
+
+.order-item {
+    width: 50%;
+    height: 60px;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.order-item:hover {
+
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: .2s ease-in;
+
+}

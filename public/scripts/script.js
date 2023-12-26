@@ -6,7 +6,9 @@ let coffeeCount = {
 };
 document.addEventListener('DOMContentLoaded', function () {
 	let modal = document.querySelector('#modal');
-	coffeeCount = JSON.parse(sessionStorage.getItem('coffeeCount'));
+	if (sessionStorage.length > 0) {
+		coffeeCount = JSON.parse(sessionStorage.getItem('coffeeCount'));
+	}
 
 	let goUp = document.querySelector('.goUp');
 
@@ -21,8 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	const items = document.querySelectorAll('.product');
 	items.forEach((item, i) => {
 		item.addEventListener('click', function () {
+			console.log('click');
 			let nested = item.querySelector('.itemName');
 			let added = nested.innerText;
+			console.log(added);
 			coffeeCount[added] += 1;
 			modal.style.display = 'block';
 			sessionStorage.setItem('coffeeCount', JSON.stringify(coffeeCount));

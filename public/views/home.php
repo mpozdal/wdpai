@@ -14,7 +14,7 @@
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
-    <script src="/public/scripts/script.js?v=4"></script>
+    <script src="/public/scripts/script.js?v=5"></script>
     <script src="/public/scripts/menuScript.js?v=4"></script>
     <script src="https://kit.fontawesome.com/5093dc09b3.js" crossorigin="anonymous"></script>
 

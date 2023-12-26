@@ -21,12 +21,13 @@ class CoffeeRepository extends Repository
         }
         foreach ($results as $coffee) {
             $coffeeItem = new Coffee(
-                $coffee["itemName"],
-                $coffee["itemDesc"],
-                $coffee["itemPrice"],
-                $coffee["imgSrc"],
+                $coffee["name"],
+                $coffee["desc"],
+                $coffee["price"],
+                $coffee["src"],
                 $coffee["strength"],
-                $coffee["id_coffee"]
+                $coffee["id_coffee"],
+                $coffee["points"],
             );
             array_push($this->coffeesCollection, $coffeeItem);
         }
@@ -53,18 +54,11 @@ class CoffeeRepository extends Repository
             $coffee["itemPrice"],
             $coffee["imgSrc"],
             $coffee["strength"],
-            $coffee["id_coffee"]
+            $coffee["id_coffee"],
+            $coffee["points"],
+
         );
     }
 
-    public function addUser(string $email, string $name, string $password)
-    {
-        $stmt = $this->database->connect()->prepare("
-        INSERT INTO public.users(email, name, password) VALUES(:email, :name, :password)");
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-        $stmt->bindParam(':password', $password, PDO::PARAM_STR);
 
-        $stmt->execute();
-    }
 }

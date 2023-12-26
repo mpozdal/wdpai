@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	hamburger.addEventListener('click', function () {
 		console.log(menu.className);
+		console.log('click');
 		if (menu.className === 'menu') {
 			menu.className += ' menuClicked';
 			hamburger.style.color = 'white';

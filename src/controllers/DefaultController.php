@@ -7,7 +7,7 @@ require_once __DIR__ . "/../repository/CoffeeRepository.php";
 
 class DefaultController extends AppController
 {
-   
+
 
     public function account()
     {
@@ -17,10 +17,6 @@ class DefaultController extends AppController
             header("Location: {$url}/login");
         }
         $this->render('account');
-    }
-    public function cart()
-    {
-        $this->render('cart');
     }
     public function aboutus()
     {

@@ -47,7 +47,6 @@ function totalPrice(cart) {
 	return suma.toFixed(2);
 }
 function updateCoffeeCount(cart, coffeeCount) {
-	
 	for (let i = 0; i < cart.length; i++) {
 		[(coffeeCount[cart[i].name] = cart[i].qty)];
 	}
@@ -89,7 +88,22 @@ document.addEventListener('DOMContentLoaded', function () {
 	} else {
 		checkoutMobile.style.display = 'block';
 	}
+	function submitCart() {
+		var cartData = JSON.stringify(cart);
+		console.log(cart);
+		var xhr = new XMLHttpRequest();
+		xhr.open('POST', 'process_cart.php', true);
+		xhr.setRequestHeader('Content-Type', 'application/json');
 
+		xhr.onload = function () {
+			if (xhr.status == 200) {
+				// Obsługa odpowiedzi z serwera (jeśli jest wymagana)
+				console.log(xhr.responseText);
+			}
+		};
+
+		xhr.send(cartData);
+	}
 	let cartImg = document.querySelector('.emptyContainer');
 
 	let summary = document.querySelector('.totalPrice');
@@ -215,3 +229,12 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 });
+
+function checkout() {
+	console.log('click');
+	let coffeeCount = JSON.parse(sessionStorage.getItem('coffeeCount'));
+	let cart = getCartItems(coffeeCount);
+	document.getElementById('cartData').value = JSON.stringify(cart);
+
+	document.getElementById('cartForm').submit();
+}

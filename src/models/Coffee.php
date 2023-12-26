@@ -9,7 +9,8 @@ class Coffee
     private $img;
     private $strength;
     private $id;
-    public function __construct($name, $desc, $price, $img, $strength, $id)
+    private $points;
+    public function __construct($name, $desc, $price, $img, $strength, $id, $points)
     {
         $this->name = $name;
         $this->desc = $desc;
@@ -17,6 +18,7 @@ class Coffee
         $this->img = $img;
         $this->strength = $strength;
         $this->id = $id;
+        $this->points = $points;
     }
     public function getName()
     {
@@ -73,5 +75,14 @@ class Coffee
     public function setId($id)
     {
         $this->id = $id;
+    }
+    public function getPoints()
+    {
+        return $this->points;
+    }
+
+    public function setPoints($points)
+    {
+        $this->points = $points;
     }
 }

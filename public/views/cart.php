@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Michal Pozdal">
-    <link rel="stylesheet" href="/public/css/styleMain.css?v=4">
-    <link rel="stylesheet" href="/public/css/styleCart.css?v=6">
+    <link rel="stylesheet" href="/public/css/styleMain.css?v=8">
+    <link rel="stylesheet" href="/public/css/styleCart.css?v=8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <script src="/public/scripts/cartScript.js?v=6"></script>
-    <script src="/public/scripts/menuScript.js?v=4"></script>
+    <script src="/public/scripts/cartScript.js?v=8"></script>
+    <script src="/public/scripts/menuScript.js?v=8"></script>
     <script src="https://kit.fontawesome.com/5093dc09b3.js" crossorigin="anonymous"></script>
 </head>
 

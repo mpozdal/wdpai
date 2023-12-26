@@ -75,23 +75,7 @@
         </div>
     </main>
 
-    <footer>
-        <span id="newsletter">
-            <h5>Subscribe to our newsletter!</h5>
-            <span>
-                <input type="text" id="email" name="email" placeholder="Email">
-                <span class="btn">
-                    OK
-                </span>
-            </span>
-        </span>
 
-
-        <span id="social">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
-        </span>
-    </footer>
 </body>
 
 </html>
