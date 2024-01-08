@@ -22,4 +22,16 @@ class DefaultController extends AppController
     {
         $this->render('aboutus');
     }
+    public function cart()
+    {
+        session_start();
+        if ($this->isPost()) {
+            if (!isset($_SESSION["email"])) {
+                return $this->render('login');
+            }
+            return $this->render('cart');
+
+        }
+        $this->render("cart");
+    }
 }

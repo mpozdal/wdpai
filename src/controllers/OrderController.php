@@ -14,20 +14,18 @@ class OrderController extends AppController
 
     public function cart()
     {
-        if (!$this->isPost()) {
-            return $this->render('cart');
-        }
 
-        session_start();
-        if (!isset($_SESSION["email"])) {
-            return $this->render("login");
+        if ($this->isPost()) {
+            session_start();
+            if (!isset($_SESSION["email"])) {
+                $url = "http://$_SERVER[HTTP_HOST]";
+                header("Location: {$url}/login");
+                exit();
+            }
+            return $this->render('home');
+
+
         }
-        $user_email = $_SESSION["email"];
-        $userRepository = new UserRepository();
-        $user = $userRepository->getUser($user_email);
-        $balance = $user->getBalance();
-        $balance = $balance - 5;
-        echo $balance;
 
         return $this->render('cart');
 

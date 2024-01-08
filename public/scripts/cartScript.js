@@ -234,7 +234,16 @@ function checkout() {
 	console.log('click');
 	let coffeeCount = JSON.parse(sessionStorage.getItem('coffeeCount'));
 	let cart = getCartItems(coffeeCount);
-	document.getElementById('cartData').value = JSON.stringify(cart);
 
-	document.getElementById('cartForm').submit();
+	console.log(cart);
+
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', 'cart', true);
+	xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+	let data = {
+		abcd: 'abcd',
+	};
+
+	xhr.send(JSON.stringify(data));
+	document.getElementById('cart').submit();
 }

@@ -9,7 +9,8 @@ Router::get("home", 'ProductsController');
 Router::post("login", 'SecurityController');
 Router::post("register", 'SecurityController');
 Router::get("aboutus", 'DefaultController');
-Router::get("cart", 'OrderController');
+
+Router::get("cart", 'DefaultController');
 Router::get("account", 'DefaultController');
 
 Router::post("logout", 'AccountController');
