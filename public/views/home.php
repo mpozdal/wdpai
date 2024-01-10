@@ -14,7 +14,7 @@
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
-    <script src="/public/scripts/script.js?v=5"></script>
+    <script src="/public/scripts/script.js?v=6"></script>
     <script src="/public/scripts/menuScript.js?v=4"></script>
     <script src="https://kit.fontawesome.com/5093dc09b3.js" crossorigin="anonymous"></script>
 
@@ -46,7 +46,7 @@
         <div class="menu">
             <div class="menuContent">
                 <a href="home"><span>Home</span></a>
-                <a href="aboutus"><span>About us</span></a>
+
                 <a href="account"><span>Account</span></a>
                 <a href="cart"><span>Cart</span></a>
             </div>
@@ -62,7 +62,7 @@
 
                     <a href="home"><span class="menuDesktop">Home</span></a>
                     <a href="home#products"><span class="menuDesktop">Menu</span></a>
-                    <a href="aboutus"><span class="menuDesktop">About us</span></a>
+
                     <a href="login"><span class="menuDesktop">Account</span></a>
                 </div>
                 <span class="cartNav">
@@ -102,33 +102,37 @@
         </section>
         <section id="mainProducts">
             <?php foreach ($coffees as $coffee): ?>
-                <div class="product">
-                    <div class="imgContainer">
-                        <img src='<?= $coffee->getImg(); ?>' class="itemImg" />
-                    </div>
-                    <div class="desc">
-                        <span class="itemName">
-                            <?= $coffee->getName(); ?>
-                        </span>
-                        <span class="itemDesc">
-                            <?= $coffee->getDesc(); ?>
-                        </span>
-                    </div>
-                    <div class="details">
-                        <div class="strength">
-                            <?php for ($i = 0; $i < $coffee->getStrength(); $i++): ?>
-                                <i class="fa-solid fa-coffee-bean"></i>
-                            <?php endfor; ?>
-                            <?php for ($i = 0; $i < 5 - $coffee->getStrength(); $i++): ?>
-                                <i class="fa-regular fa-coffee-bean"></i>
-                            <?php endfor; ?>
 
+                <button class="menuButton">
+
+                    <div class="product">
+                        <div class="imgContainer">
+                            <img src='<?= $coffee->getImg(); ?>' class="itemImg" />
                         </div>
-                        <div class="itemPrice">
-                            <?= $coffee->getPrice(); ?> zł
+                        <div class="desc">
+                            <span class="itemName">
+                                <?= $coffee->getName(); ?>
+                            </span>
+                            <span class="itemDesc">
+                                <?= $coffee->getDesc(); ?>
+                            </span>
+                        </div>
+                        <div class="details">
+                            <div class="strength">
+                                <?php for ($i = 0; $i < $coffee->getStrength(); $i++): ?>
+                                    <i class="fa-solid fa-coffee-bean"></i>
+                                <?php endfor; ?>
+                                <?php for ($i = 0; $i < 5 - $coffee->getStrength(); $i++): ?>
+                                    <i class="fa-regular fa-coffee-bean"></i>
+                                <?php endfor; ?>
+
+                            </div>
+                            <div class="itemPrice">
+                                <?= $coffee->getPrice(); ?> zł
+                            </div>
                         </div>
                     </div>
-                </div>
+                </button>
             <?php endforeach; ?>
         </section>
     </article>

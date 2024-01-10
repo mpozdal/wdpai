@@ -3,14 +3,13 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	position: static;
+	align-items: center;
 	gap: 30px;
 }
 #orders {
 	width: 90%;
 	text-align: center;
 }
-
 .tableHeader {
 	background-color: #765f4e;
 }

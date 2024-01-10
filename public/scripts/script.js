@@ -20,19 +20,21 @@ document.addEventListener('DOMContentLoaded', function () {
 			goUp.style.display = 'none';
 		}
 	});
-	const items = document.querySelectorAll('.product');
-	items.forEach((item, i) => {
-		item.addEventListener('click', function () {
-			console.log('click');
-			let nested = item.querySelector('.itemName');
-			let added = nested.innerText;
-			console.log(added);
-			coffeeCount[added] += 1;
-			modal.style.display = 'block';
-			sessionStorage.setItem('coffeeCount', JSON.stringify(coffeeCount));
-			setTimeout(() => {
+
+	const addBtn = document.querySelectorAll('.menuButton');
+
+	function addToBasket() {
+		let name = this.querySelector('.itemName').innerText;
+		name = name.replace(' ', '_');
+		modal.style.display = 'block';
+		fetch(`/add/${name}`)
+			.then((response) => {
+				console.log(response);
+			})
+			.finally(() => {
 				modal.style.display = 'none';
-			}, 500);
-		});
-	});
+			});
+	}
+
+	addBtn.forEach((button) => button.addEventListener('click', addToBasket));
 });

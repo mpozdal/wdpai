@@ -20,7 +20,7 @@
         <div class="menu">
             <div class="menuContent">
                 <a href="home"><span>Home</span></a>
-                <a href="aboutus"><span>About us</span></a>
+               
                 <a href="account"><span>Account</span></a>
                 <a href="cart"><span>Cart</span></a>
             </div>
@@ -34,7 +34,7 @@
 
                 <a href="home"><span class="menuDesktop menuDesktopOther">Home</span></a>
                 <a href="home#products"><span class="menuDesktop menuDesktopOther">Menu</span></a>
-                <a href="aboutus"><span class="menuDesktop menuDesktopOther">About us</span></a>
+               
                 <a href="login"><span class="menuDesktop menuDesktopOther">Account</span></a>
             </div>
             <span class="cartNav">
@@ -48,7 +48,7 @@
             <div class="menuContent">
                 <a href="home"><span>Home</span></a>
                 <a href="home#products"><span>Order</span></a>
-                <a href="aboutus"><span>About us</span></a>
+               
                 <a href="account"><span>Account</span></a>
                 <a href="cart"><span>Cart</span></a>
             </div>
@@ -64,6 +64,7 @@
             Login
         </span>
         <form id="login" method="post" action="login">
+            <span class="message"><?= $message ?></span>
             <span><i class="fa-solid fa-envelope"></i><input type="email" id="email" name="email"
                     placeholder="Email"></span>
             <span><i class="fa-solid fa-key"></i><input type="password" id="password" name="password"

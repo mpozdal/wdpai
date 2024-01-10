@@ -16,43 +16,66 @@
 
 <body>
 
-    <header>
-        <a href="home"> <img src="/public/assets/logo.png" class="logo" /></a>
-        <div class="bars">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <div id="nav">
+    <div id="home">
 
-            <a href="home"><span class="menuDesktop menuDesktopOther">Home</span></a>
-            <a href="home#products"><span class="menuDesktop menuDesktopOther">Menu</span></a>
-            <a href="aboutus"><span class="menuDesktop menuDesktopOther">About us</span></a>
-            <a href="login"><span class="menuDesktop menuDesktopOther">Account</span></a>
-        </div>
-        <span class="cartNav">
-            <a href="cart">
-                <span class="menuDesktop menuDesktopOther"><i class="fa-solid fa-cart-shopping"></i></span>
-            </a>
-        </span>
+        <div class="menu">
+            <div class="menuContent">
+                <a href="home"><span>Home</span></a>
 
-    </header>
-    <div class="menu">
-        <div class="menuContent">
-            <a href="home"><span>Home</span></a>
-            <a href="home#products"><span>Order</span></a>
-            <a href="aboutus"><span>About us</span></a>
-            <a href="account"><span>Account</span></a>
-            <a href="cart"><span>Cart</span></a>
+                <a href="account"><span>Account</span></a>
+                <a href="cart"><span>Cart</span></a>
+            </div>
+        </div>
+        <header>
+            <a href=" home"> <img src="/public/assets/logo.png" class="logo" /></a>
+            <div class="bars">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div id="nav">
+
+                <a href="home"><span class="menuDesktop menuDesktopOther">Home</span></a>
+                <a href="home#products"><span class="menuDesktop menuDesktopOther">Menu</span></a>
+
+                <a href="login"><span class="menuDesktop menuDesktopOther">Account</span></a>
+            </div>
+            <span class="cartNav">
+                <a href="cart">
+                    <span class="menuDesktop menuDesktopOther"><i class="fa-solid fa-cart-shopping"></i></span>
+                </a>
+            </span>
+
+        </header>
+        <div class="menu">
+            <div class="menuContent">
+                <a href="home"><span>Home</span></a>
+                <a href="home#products"><span>Order</span></a>
+
+                <a href="account"><span>Account</span></a>
+                <a href="cart"><span>Cart</span></a>
+            </div>
         </div>
     </div>
+
     <main>
 
         <div class="list">
             <div class="info">
                 <?php
-                session_start();
-                echo " <div>Hi, " . $_SESSION["name"] . "</div>";
+                $userRepository = new UserRepository();
+                $user = $userRepository->getUser($_SESSION["email"]);
 
-                ?>
+                session_start();
+                if ($userRepository->getUserRole($_SESSION["email"]) === "admin") {
+                    echo " Hi, " . $_SESSION["name"] . " [" . $userRepository->getUserRole($_SESSION["email"]) . "] ";
+                } else {
+                    echo " Hi, " . $_SESSION["name"] . "";
+                }
+
+                echo "<div>Balance: " . $user->getBalance() . "</div>"
+
+
+
+                    ?>
             </div>
 
 
@@ -61,6 +84,27 @@
                 <button type="submit" value="orders" name="orders" class="button">
                     <i class="fa-solid fa-mug-saucer" style="font-size: 30px;"></i>
                     &nbsp;&nbsp;&nbsp;Orders
+                </button>
+            </form>
+            <?php
+            $user = new UserRepository();
+            $userRole = $user->getUserRole($_SESSION["email"]);
+            if ($userRole === "admin") {
+                echo '
+        <form method="POST" action="admin">
+                <button type="submit" value="admin" name="admin" class="button">
+                    <i class="fa-solid fa-chart-bar" style="font-size: 30px;"></i>
+                    &nbsp;&nbsp;&nbsp;Dashboard
+                </button>
+            </form>
+        ';
+            }
+            ?>
+            <form method="POST" action="topup">
+
+                <button type="submit" value="Topup" name="topup" class="button">
+                    <i class="fa-solid fa-building-columns" style="font-size: 30px;"></i>
+                    &nbsp;&nbsp;&nbsp;Topup
                 </button>
             </form>
 

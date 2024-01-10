@@ -22,8 +22,8 @@ class SecurityController extends AppController
         $password = $_POST["password"];
 
         $user = $userRepository->getUser($email);
-        if (!$user || $user->getEmail() != $email || $user->getPassword() != $password) {
-            return $this->render("login");
+        if (!$user || $user->getEmail() != $email || !password_verify($password, $user->getPassword())) {
+            return $this->render("login", ["message" => "Email lub haslo jest niepoprawne!"]);
         }
         session_start();
         $_SESSION["email"] = $email;
@@ -47,9 +47,12 @@ class SecurityController extends AppController
         }
         $email = $_POST["email"];
         $name = $_POST["name"];
-        $password = $_POST["password"];
-
-        $userRepository->addUser($email, $name, $password);
+        if ($userRepository->getUser($email)) {
+            return $this->render('register', ["message" => "Ten email jest zajety!"]);
+        }
+        $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
+        $user = new User($email, $name, $password, 0, "customer");
+        $userRepository->addUser($user);
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/login");
     }

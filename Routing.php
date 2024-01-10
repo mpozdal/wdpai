@@ -6,6 +6,7 @@ require_once 'src/controllers/Ordercontroller.php';
 require_once 'src/controllers/AccountController.php';
 require_once 'src/controllers/ProductsController.php';
 require_once 'src/controllers/BasketController.php';
+require_once 'src/controllers/AdminController.php';
 
 class Router
 {
@@ -24,7 +25,9 @@ class Router
 
     public static function run($url)
     {
-        $action = explode("/", $url)[0];
+        $urlParts = explode("/", $url);
+        $action = $urlParts[0];
+
         if (!array_key_exists($action, self::$routes)) {
             die("Wrong url!");
         }
@@ -33,6 +36,8 @@ class Router
         $object = new $controller;
         $action = $action ?: 'home';
 
-        $object->$action();
+        $id = $urlParts[1] ?? '';
+
+        $object->$action($id);
     }
 }

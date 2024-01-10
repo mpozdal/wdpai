@@ -4,10 +4,16 @@ class BasketItem
 {
     private $id_coffee;
     private $quantity;
-    public function __construct($id_coffee, $quantity)
+    private $name;
+    private $price;
+    private $src;
+    public function __construct($id_coffee, $quantity, $name, $price, $src)
     {
         $this->id_coffee = $id_coffee;
         $this->quantity = $quantity;
+        $this->name = $name;
+        $this->price = $price;
+        $this->src = $src;
 
     }
 
@@ -27,5 +33,17 @@ class BasketItem
     public function getQuantity()
     {
         return $this->quantity;
+    }
+    public function getName()
+    {
+        return $this->name;
+    }
+    public function getPrice()
+    {
+        return $this->price;
+    }
+    public function getSrc()
+    {
+        return $this->src;
     }
 }

@@ -1,67 +1,65 @@
-
 .textHeader {
-    font-size: 50px;
-    font-weight: bold;
-    color: #765F4E;
+	font-size: 50px;
+	font-weight: bold;
+	color: #765f4e;
 }
 form {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-   gap: 10px;
-
+	margin-top: 60px;
+	margin-bottom: 60px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+span .message {
+	font-size: 10px;
 }
 
 main input {
-
-    width: 250px;
-    padding: 15px;
-    background-color: transparent;
-    border: 2px solid #765F4E;
-    border-radius: 20px;
-    color: #765F4E;
-    font-size: 15px;
-    padding-left: 50px;
-
+	width: 250px;
+	padding: 15px;
+	background-color: transparent;
+	border: 2px solid #765f4e;
+	border-radius: 20px;
+	color: #765f4e;
+	font-size: 15px;
+	padding-left: 50px;
 }
 
 .noAcc {
-    font-size: 13px;
-    justify-content: flex-end;
-    
+	font-size: 13px;
+	justify-content: flex-end;
 }
 main button {
-    width: 320px;
-    padding: 15px;
-    border-radius: 20px;
-    background-color: #765F4E;
-    border: 2px solid #765F4E;
-    font-family: 'Montserrat';
-    font-weight: bold;
-    font-size: 20px;
-    color: white;
-    
+	width: 320px;
+	padding: 15px;
+	border-radius: 20px;
+	background-color: #765f4e;
+	border: 2px solid #765f4e;
+	font-family: 'Montserrat';
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
 }
 main button:hover {
-    opacity: .9;
-    cursor: pointer;
+	opacity: 0.9;
+	cursor: pointer;
 }
 form span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-.fa-envelope, .fa-key, .fa-user{
-    color:#765F4E;
-    position: relative;
-    right: -40px;
-    font-size: 20px;
-   
+.fa-envelope,
+.fa-key,
+.fa-user {
+	color: #765f4e;
+	position: relative;
+	right: -40px;
+	font-size: 20px;
 }
 
 @media only screen and (max-width: 1000px) {
-    .bars {
-        color:#765F4E;
-    }
+	.bars {
+		color: #765f4e;
+	}
 }

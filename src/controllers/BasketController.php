@@ -12,13 +12,28 @@ class BasketController extends AppController
         $this->basketRepository = new BasketRepository();
     }
 
-    public function cart()
+    public function plusQty(int $coffeeId)
     {
-        session_start();
-        $user_email = $_SESSION["email"];
-        $coffees = $this->basketRepository->getBasket($user_email);
 
-        $this->render('cart');
+        $this->basketRepository->updateQtyPlus($coffeeId);
+        http_response_code(200);
+    }
+    public function minusQty(int $coffeeId)
+    {
+        $this->basketRepository->updateQtyMinus($coffeeId);
+        http_response_code(200);
+    }
+    public function deleteItem(int $id)
+    {
+        $this->basketRepository->removeBasketItem($id);
+        http_response_code(200);
+    }
+
+    public function add(string $name)
+    {
+        $name = str_replace("_", " ", $name);
+        $this->basketRepository->addItemToBasket($name);
+        http_response_code(200);
     }
 
 

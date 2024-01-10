@@ -6,13 +6,15 @@ class User
     private $name;
     private $password;
     private $balance;
+    private $acc_type;
 
-    public function __construct(string $email, string $name, string $password, $balance)
+    public function __construct(string $email, string $name, string $password, $balance, string $acc_type)
     {
         $this->email = $email;
         $this->name = $name;
         $this->password = $password;
         $this->balance = $balance;
+        $this->acc_type = $acc_type;
     }
 
     public function setEmail(string $email)
@@ -50,5 +52,9 @@ class User
     public function getPassword()
     {
         return $this->password;
+    }
+    public function getAccType()
+    {
+        return $this->acc_type;
     }
 }

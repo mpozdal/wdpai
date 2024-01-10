@@ -9,7 +9,7 @@ class CoffeeRepository extends Repository
     public function getCoffees()
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.coffees
+            SELECT * FROM showCoffees;
         ');
 
         $stmt->execute();
@@ -32,6 +32,19 @@ class CoffeeRepository extends Repository
             array_push($this->coffeesCollection, $coffeeItem);
         }
         return $this->coffeesCollection;
+    }
+    public function getCoffeeId(string $name)
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM public.coffees WHERE name = :name
+        ');
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $coffeeId = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+        return $coffeeId["id_coffee"];
     }
 
     public function getCoffee($id)

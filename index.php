@@ -12,9 +12,21 @@ Router::get("aboutus", 'DefaultController');
 
 Router::get("cart", 'DefaultController');
 Router::get("account", 'DefaultController');
+Router::get("admin", 'AdminController');
+
+Router::get("confirm", 'AdminController');
+Router::get("cancel", 'AdminController');
 
 Router::post("logout", 'AccountController');
-Router::get("orders", 'AccountController');
+Router::get("orders", 'OrderController');
+Router::get("order", 'OrderController');
+Router::get("topup", 'AccountController');
+
+Router::get('plusQty', 'BasketController');
+Router::get('minusQty', 'BasketController');
+Router::get('deleteItem', 'BasketController');
+Router::get('add', 'BasketController');
+Router::get('create', 'OrderController');
 
 Router::run($path);
 ?>

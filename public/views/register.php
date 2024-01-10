@@ -20,7 +20,7 @@
         <div class="menu">
             <div class="menuContent">
                 <a href="home"><span>Home</span></a>
-                <a href="aboutus"><span>About us</span></a>
+
                 <a href="account"><span>Account</span></a>
                 <a href="cart"><span>Cart</span></a>
             </div>
@@ -34,7 +34,7 @@
 
                 <a href="home"><span class="menuDesktop menuDesktopOther">Home</span></a>
                 <a href="home#products"><span class="menuDesktop menuDesktopOther">Menu</span></a>
-                <a href="aboutus"><span class="menuDesktop menuDesktopOther">About us</span></a>
+
                 <a href="login"><span class="menuDesktop menuDesktopOther">Account</span></a>
             </div>
             <span class="cartNav">
