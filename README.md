@@ -1,3 +1,24 @@
+MOTTO COFFEE
+
+Welcome to the Coffee Ordering Website project! 
+This web application is designed to provide a seamless and enjoyable experience for coffee enthusiasts to order their favorite brews online. 
+Whether you're a coffee connoisseur or just looking for a convenient way to get your daily caffeine fix, our platform is here to cater to your needs.
+
+
+This module requires the following modules:
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- [nginx](https://nginx.org/en/download.html)
+- [php](https://www.php.net/downloads.php)
+
+Configuration
+
+1. Open Docker Desktop
+2. Open folder with project
+3. Type in terminal "docker-compose up"
+4. Open in a browser "localhost:5173"
+
+
 HOME SCREEN
 ![image](https://github.com/skavinho/wdpai/assets/64686380/ec77fcd5-b6d7-492c-ae08-78fcf5f6b3cb)
 MENU
