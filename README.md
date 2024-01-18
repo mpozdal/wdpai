@@ -18,9 +18,10 @@ Whether you're a coffee connoisseur or just looking for a convenient way to get 
 3. Type in terminal "docker-compose up".
 4. In a browser open "localhost:5173".
 
-
+<center>
 ### HOME SCREEN
 ![image](https://github.com/skavinho/wdpai/assets/64686380/ec77fcd5-b6d7-492c-ae08-78fcf5f6b3cb)
+
 ### MENU
 ![image](https://github.com/skavinho/wdpai/assets/64686380/286d993b-0287-4704-b6ce-79ac74df508d)
 ### ACCOUNT SCREEN
@@ -39,6 +40,7 @@ Whether you're a coffee connoisseur or just looking for a convenient way to get 
 ![image](https://github.com/skavinho/wdpai/assets/64686380/7d39ad01-d61a-466b-a8f5-718f1286fb33)
 ### REGISTER SCREEN
 ![image](https://github.com/skavinho/wdpai/assets/64686380/b3c988b5-ece7-48ff-92d0-6cc12a0da558)
+</center>
 
 
 
