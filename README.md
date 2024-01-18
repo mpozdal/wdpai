@@ -13,10 +13,10 @@ This module requires the following modules:
 
 Configuration
 
-1. Open Docker Desktop
-2. Open folder with project
-3. Type in terminal "docker-compose up"
-4. Open in a browser "localhost:5173"
+1. Open Docker Desktop.
+2. Open the project folder.
+3. Type in terminal "docker-compose up".
+4. In a browser open "localhost:5173".
 
 
 HOME SCREEN
