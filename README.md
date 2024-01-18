@@ -7,9 +7,9 @@ ACCOUNT SCREEN
 TOP UP SCREEN
 ![image](https://github.com/skavinho/wdpai/assets/64686380/deab6f6b-6d69-4405-b391-e1471932a200)
 USER ORDERS SCREEN
-![image](https://github.com/skavinho/wdpai/assets/64686380/97a9f5b9-54e9-46f2-826d-2d2e61f1b2e2)
-DASHBOARD FOR ADMIN
-![image](https://github.com/skavinho/wdpai/assets/64686380/02260e87-968d-4184-8ade-1e7eb97954a4)
+![image](https://github.com/skavinho/wdpai/assets/64686380/6ae20ee8-0919-4cde-a3bc-80786b311363)
+ADMIN DASHBOARD
+![image](https://github.com/skavinho/wdpai/assets/64686380/928b3b4f-881e-4188-a5c3-b76cc9d95360)
 CART
 ![image](https://github.com/skavinho/wdpai/assets/64686380/13c46dc4-3491-4c9a-a998-c6ad61e11437)
 ORDER DETAILS SCREEN
