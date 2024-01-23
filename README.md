@@ -16,9 +16,10 @@ Whether you're a coffee connoisseur or just looking for a convenient way to get 
 1. Open Docker Desktop.
 2. Open the project folder.
 3. Type in terminal "docker-compose up".
-4. In a browser open "localhost:5173".
+4. In a browser open "localhost:8000".
 
 <center>
+  
 ### HOME SCREEN
 ![image](https://github.com/skavinho/wdpai/assets/64686380/ec77fcd5-b6d7-492c-ae08-78fcf5f6b3cb)
 
